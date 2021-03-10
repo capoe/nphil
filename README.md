@@ -1,16 +1,13 @@
 ## Setup
 
 ```bash
-conda create --prefix "./venv" python=3.7
-conda activate "./venv"
-conda install libboost
 pip install .
 ```
 
 ## Example
 
 ```bash
-# (Make sure conda environment is activated)
+# (Make sure pip/conda environment is activated)
 cd example
 python generate_toy_dataset.py
 philter --extt_file example.extt
