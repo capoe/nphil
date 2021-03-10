@@ -1,0 +1,6 @@
+include LICENSE
+recursive-include external/ *.h
+recursive-include external/ *.hpp
+recursive-include nphil/cxx *.h
+recursive-include nphil/cxx *.hpp
+recursive-include nphil/cxx *.cpp
