@@ -64,10 +64,10 @@ if __name__ == "__main__":
         scripts=get_scripts(),
         packages=find_packages(),
         setup_requires=['pybind11>=2.4'],
-        install_requires=['pybind11>=2.4', "numpy", "scipy", "scikit-learn"],
+        install_requires=['pybind11>=2.4', "numpy", "scipy", "scikit-learn", "mkl", "mkl-include"],
         include_package_data=True,
         ext_modules=make_cxx_extensions(),
-        license="Apache License 2.0",
+        license="GNU General Public License (Version 2)",
         classifiers=[
             "Development Status :: 3 - Alpha",
             "Intended Audience :: Science/Research",

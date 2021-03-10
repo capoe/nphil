@@ -3,7 +3,7 @@
 ```bash
 conda create --prefix "./venv" python=3.7
 conda activate "./venv"
-conda install -c intel mkl mkl-include libboost
+conda install libboost
 pip install .
 ```
 
