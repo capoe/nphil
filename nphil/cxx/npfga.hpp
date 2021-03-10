@@ -416,8 +416,15 @@ void correlateMatrixColumnsPearson(
     int k, 
     int l);
 
-void correlateMatrixColumnsSpearman(matrix_t &X_in, matrix_t &Y_in, matrix_t &cov_out);
-void correlateMatrixColumnsAUROC(matrix_t &X_in, matrix_t &Y_in, matrix_t &cov_out);
+void correlateMatrixColumnsSpearman(
+    matrix_t &X_in, 
+    matrix_t &Y_in, 
+    matrix_t &cov_out);
+
+void correlateMatrixColumnsAUROC(
+    matrix_t &X_in, 
+    matrix_t &Y_in, 
+    matrix_t &cov_out);
 
 
 }}

@@ -22,6 +22,7 @@ def make_cxx_extensions():
     srcs = sorted(glob.glob('nphil/cxx/*.cpp'))
     incdirs = [
         "./nphil/cxx",
+        "./external",
         find_env_include_dir(),
         get_pybind_include(),
         get_pybind_include(user=True)]
@@ -63,7 +64,7 @@ if __name__ == "__main__":
         long_description=get_description(),
         scripts=get_scripts(),
         packages=find_packages(),
-        setup_requires=['pybind11>=2.4'],
+        setup_requires=['pybind11>=2.4', 'mkl', 'mkl-include'],
         install_requires=['pybind11>=2.4', "numpy", "scipy", "scikit-learn", "mkl", "mkl-include"],
         include_package_data=True,
         ext_modules=make_cxx_extensions(),
