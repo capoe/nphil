@@ -16,7 +16,9 @@ def get_scripts():
 
 def find_env_include_dir():
     pydir = os.path.dirname(sys.executable)
-    return os.path.join(pydir, "..", "include")
+    incdir = os.path.join(pydir, "..", "include")
+    assert os.path.isdir(incdir)
+    return incdir
 
 def make_cxx_extensions():
     srcs = sorted(glob.glob('nphil/cxx/*.cpp'))
@@ -56,7 +58,7 @@ def get_description():
 if __name__ == "__main__":
     setup(
         name="nphil",
-        version="0.1.4",
+        version="0.1.5",
         author="capoe",
         author_email="carl.poelking@floatlab.io",
         url="https://github.com/capoe/nphil",

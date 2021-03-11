@@ -2,14 +2,13 @@
 #include <assert.h>
 #include <fstream>
 #include <numeric>
+#include <boost/format.hpp>
 
 #include "tokenizer.hpp"
 #include "exceptions.hpp"
 #include "npfga.hpp"
 #include "globals.hpp"
-//#include "numpy.hpp"
 #include "operations.hpp"
-#include "boost/format.hpp"
 
 namespace soap { namespace npfga {
 
