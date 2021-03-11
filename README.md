@@ -1,7 +1,8 @@
 ## Setup
 
 ```bash
-pip install .
+# Note: python3 required
+pip install nphil
 ```
 
 ## Example
