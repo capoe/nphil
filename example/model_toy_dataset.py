@@ -34,7 +34,7 @@ def build_simple_nphil():
                     "X":"input.X", 
                     "Y":"input.Y", 
                     "meta":"input.meta"}),
-            bml.transforms.GradientBoosting(
+            bml.transforms.LinearRegression(
                 tag="predictor",
                 args={},
                 inputs={
