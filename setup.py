@@ -56,7 +56,7 @@ def get_description():
 if __name__ == "__main__":
     setup(
         name="nphil",
-        version="0.1.3",
+        version="0.1.4",
         author="capoe",
         author_email="carl.poelking@floatlab.io",
         url="https://github.com/capoe/nphil",
