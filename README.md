@@ -1,7 +1,9 @@
 ## Setup
 
 ```bash
-# Note: python3 required
+# Note: python3 required. For example:
+# conda create --prefix "./venv" python=3.7
+# conda activate ./venv
 pip install nphil
 ```
 
