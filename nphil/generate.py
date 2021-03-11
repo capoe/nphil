@@ -8,7 +8,7 @@ from .utils import *
 from .maths import CovTailScalingFct
 
 def generate_graph(
-        features_with_props,
+        variables,
         uop_list,
         bop_list,
         unit_min_exp,
@@ -21,7 +21,7 @@ def generate_graph(
         unit_min_exp=unit_min_exp, 
         unit_max_exp=unit_max_exp,
         rank_coeff=rank_coeff)
-    for f in features_with_props:
+    for f in variables:
         fgraph.addRootNode(**f)
     for lidx in range(len(uop_list)):
         fgraph.addLayer(uop_list[lidx], bop_list[lidx])

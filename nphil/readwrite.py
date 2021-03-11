@@ -17,16 +17,19 @@ class ExtendedTxt(object):
     def __getitem__(self, key):
         return self.arrays[key]
 
-def save_extt(extt_file, arrays, meta):
-    with open(extt_file, 'w') as f:
-        for k, v in arrays.items():
-            f.write('%s:%s ' % (k, str(v.shape).replace(" ","")))
-        f.write('\n')
-        f.write(json.dumps(meta))
-        f.write('\n')
-        for k, v in arrays.items(): # order is guaranteed to match loop above
-            np.savetxt(f, v)
-        f.close()
+def save_extt(extt_file, arrays, meta={}):
+    if type(arrays) is dict:
+        with open(extt_file, 'w') as f:
+            for k, v in arrays.items():
+                f.write('%s:%s ' % (k, str(v.shape).replace(" ","")))
+            f.write('\n')
+            f.write(json.dumps(meta))
+            f.write('\n')
+            for k, v in arrays.items(): # order is guaranteed to match loop above
+                np.savetxt(f, v)
+            f.close()
+    else:
+        arrays.save(extt_file)
     return
 
 def load_extt(extt_file):

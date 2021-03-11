@@ -2,6 +2,7 @@
 #include <pybind11/numpy.h>  
 #include <pybind11/stl.h>    
 #include "npfga.hpp"
+#include "globals.hpp"
 
 namespace py = pybind11;
 namespace npfga = soap::npfga;
@@ -40,4 +41,5 @@ PYBIND11_MODULE(_nphil, m) {
         .def_property("q", &npfga::FNode::getConfidence, &npfga::FNode::setConfidence)
         .def("getRoots", &npfga::FNode::getRoots)
         .def("getParents", &npfga::FNode::getParents);
+    m.def("silent", &soap::GLOG_SET_SILENT, "Enable/disable NPHIL CXX logger");
 }
