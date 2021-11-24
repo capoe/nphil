@@ -7,6 +7,17 @@
 pip install nphil
 ```
 
+The above steps have anecdotally failed due to a linker error (libmkl\_rt.so not found). If that happens, try the following:
+
+```bash
+conda install -c intel mkl mkl-include
+export LDFLAGS=-L/path/to/venv/lib
+export CPPFLAGS=-L/path/to/venv/include
+git clone https://github.com/capoe/nphil.git
+cd nphil
+pip install .
+```
+
 ## Example
 
 ```bash

@@ -13,8 +13,8 @@ def build_simple_rf():
             bml.transforms.RandomForestRegressor(tag="predictor",
                 inputs={"X": "input.X", "y": "input.Y"}),
         ],
-        hyper=bml.transforms.GridHyper(
-            bml.transforms.Hyper({"predictor.max_depth": [None]})),
+        hyper=bml.hyper.GridHyper(
+            bml.hyper.Hyper({"predictor.max_depth": [None]})),
         broadcast={},
         outputs={"y": "predictor.y"})
 
