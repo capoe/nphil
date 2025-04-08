@@ -1,19 +1,20 @@
 ## Setup
 
+#### Using conda
 ```bash
-# Note: python3 required. For example:
-# conda create --prefix "./venv" python=3.7
-# conda activate ./venv
-conda install -c intel mkl mkl-include
-pip install nphil
+conda env create --prefix ./venv --file env.yaml
 ```
 
-The above steps have anecdotally failed due to a linker error (libmkl\_rt.so not found). If that happens, try the following:
+This will rely on the `nphil` dependency list to install `numpy`, `scikit`,
+and the likes.
+
+#### By cloning this directory
 
 ```bash
-conda install -c intel mkl mkl-include
-export LDFLAGS=-L/path/to/venv/lib
-export CPPFLAGS=-L/path/to/venv/include
+# Note: python3 required. For example:
+# conda create --prefix "./venv" python=3.10
+# conda activate ./venv
+conda install -c conda-forge mkl mkl-include
 git clone https://github.com/capoe/nphil.git
 cd nphil
 pip install .

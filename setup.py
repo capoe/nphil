@@ -14,9 +14,9 @@ class get_pybind_include(object):
 def get_scripts():
     return [ "bin/philter" ]
 
-def find_env_include_dir():
+def find_env_dir(dir_type="include"):
     pydir = os.path.dirname(sys.executable)
-    incdir = os.path.join(pydir, "..", "include")
+    incdir = os.path.join(pydir, "..", dir_type)
     assert os.path.isdir(incdir)
     return incdir
 
@@ -25,7 +25,7 @@ def make_cxx_extensions():
     incdirs = [
         "./nphil/cxx",
         "./external",
-        find_env_include_dir(),
+        find_env_dir(dir_type="include"),
         get_pybind_include(),
         get_pybind_include(user=True)]
     cpp_extra_link_args = [
@@ -45,6 +45,7 @@ def make_cxx_extensions():
             'nphil._nphil',
             srcs,
             include_dirs=incdirs,
+            library_dirs=[find_env_dir(dir_type="lib")],
             libraries=[],
             language='c++',
             extra_compile_args=cpp_extra_compile_args + ["-fvisibility=hidden"],
